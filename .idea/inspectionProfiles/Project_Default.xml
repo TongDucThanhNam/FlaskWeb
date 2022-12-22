@@ -35,6 +35,8 @@
           <option value="dict.add" />
           <option value="set.__getitem__" />
           <option value="set.count" />
+          <option value="flask_sqlalchemy.SQLAlchemy.*" />
+          <option value="models.User.query" />
         </list>
       </option>
     </inspection_tool>
