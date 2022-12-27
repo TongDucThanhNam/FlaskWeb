@@ -33,26 +33,17 @@ set FLASK_APP=flaskapp.py
 flask run
 ```
 
-#Docker 
+# Docker 
 - Bước 1: Cài đặt Docker
-- Bước 2: Mở Terminal -> trỏ đến thử mục project, Tạo folder env (Lưu Ý nếu đã tồn tại thư mục env thì phải xóa đi trước khi tạo mới): 
+- Bước 2: Tạo docker network:
 ```sh
-    python -m venv env
+docker network create --driver myproject-network
 ```
-- Bước 3. Kích hoạn virtual env:
+- Bước 3: Tạo build docker:
 ```sh
-    .\env\Scripts\activate
+docker-compose build
 ```
-- Bước 4. Tải các thư viện liệt kê trong requirements.txt: 
+- Bước 4: Chạy docker:
 ```sh
-python -m pip install -r requirements.txt
+docker-compose up -d
 ```
-- Bước 5. Tạo file Dockerfile
-- Bước 6. Tạo file docker-compose.yml
-- Bước 7. Chạy file docker-compose.yml: 
-```sh
-docker-compose up
-```
-- Bước 8. Truy cập vào đường link sau:
-
-- 
