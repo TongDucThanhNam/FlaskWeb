@@ -9,17 +9,6 @@ def index():
     return render_template('index.html')
 
 
-@main.route('/services')
-def services():
-    return render_template('services.html')
-
-
-# route project
-@main.route('/projects')
-def project():
-    return render_template('projects.html')
-
-
 # route pricing
 @main.route('/pricing')
 def pricing():
@@ -27,11 +16,12 @@ def pricing():
 
 
 # route product
-@main.route('/product')
-def product():
-    return render_template('products.html')
+@main.route('/projects')
+def projects():
+    return render_template('projects.html')
 
-#route products
+
+# route products
 @main.route('/project_init')
 def project_init():
     return render_template('project_init.html')
@@ -71,5 +61,3 @@ def login():
 @main.route('/signup')
 def signup():
     return render_template('signup.html')
-
-

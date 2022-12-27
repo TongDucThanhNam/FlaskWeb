@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-dark navbar-expand-md sticky-top py-3" id="mainNav">
+    <div class="container"><a class="navbar-brand d-flex align-items-center" href="{{ url_for('main.index') }}"><span
+            class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon"><svg
+            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+            class="bi bi-bezier">
+                </svg></span><span>TymWork</span></a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
+                class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link active" href="{{ url_for("main.index") }}">Trang chủ</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('main.projects') }}">Dự án</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('main.pricing') }}">Phí dịch vụ</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('main.team') }}">Our team</a></li>
+{#                <li class="nav-item"><a class="nav-link" href="{{ url_for('main.testimonials') }}">Đánh giá</a></li>#}
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('main.contacts') }}">Liên hệ</a></li>
+
+            </ul>
+            <a class="btn btn-primary shadow" role="button" href="{{ url_for('main.login') }}">Đăng nhập</a>
+            <a class="btn btn-outline-secondary ms-2" role="button" href="{{ url_for('main.signup') }}">Đăng ký</a>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
