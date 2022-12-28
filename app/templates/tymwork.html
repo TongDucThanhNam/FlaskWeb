@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+</head>
+<body>
+{% include 'macros/navbar.html' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#item-1">Item 1</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
+                        <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
+                    </nav>
+                    <a class="nav-link" href="#item-2">Item 2</a>
+                    <a class="nav-link" href="#item-3">Item 3</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
+                        <a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
+                    </nav>
+                </nav>
+            </nav>
+        </div>
+
+        <div class="col-7 bg-semi-white">
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+                <h4 id="item-1">Item 1</h4>
+                <p>...</p>
+                <h5 id="item-1-1">Item 1-1</h5>
+                <p>...</p>
+                <h5 id="item-1-2">Item 1-2</h5>
+                <p>...</p>
+                <h4 id="item-2">Item 2</h4>
+                <p>...</p>
+                <h4 id="item-3">Item 3</h4>
+                <p>...</p>
+                <h5 id="item-3-1">Item 3-1</h5>
+                <p>...</p>
+                <h5 id="item-3-2">Item 3-2</h5>
+                <p>...</p>
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+                    <h4 id="item-1">Item 1</h4>
+                    <p>...</p>
+                    <h5 id="item-1-1">Item 1-1</h5>
+                    <p>...</p>
+                    <h5 id="item-1-2">Item 1-2</h5>
+                    <p>...</p>
+                    <h4 id="item-2">Item 2</h4>
+                    <p>...</p>
+                    <h4 id="item-3">Item 3</h4>
+                    <p>...</p>
+                    <h5 id="item-3-1">Item 3-1</h5>
+                    <p>...</p>
+                    <h5 id="item-3-2">Item 3-2</h5>
+                    <p>...</p>
+                    <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+                        <h4 id="item-1">Item 1</h4>
+                        <p>...</p>
+                        <h5 id="item-1-1">Item 1-1</h5>
+                        <p>...</p>
+                        <h5 id="item-1-2">Item 1-2</h5>
+                        <p>...</p>
+                        <h4 id="item-2">Item 2</h4>
+                        <p>...</p>
+                        <h4 id="item-3">Item 3</h4>
+                        <p>...</p>
+                        <h5 id="item-3-1">Item 3-1</h5>
+                        <p>...</p>
+                        <h5 id="item-3-2">Item 3-2</h5>
+                        <p>...</p>
+                        <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+                            <h4 id="item-1">Item 1</h4>
+                            <p>...</p>
+                            <h5 id="item-1-1">Item 1-1</h5>
+                            <p>...</p>
+                            <h5 id="item-1-2">Item 1-2</h5>
+                            <p>...</p>
+                            <h4 id="item-2">Item 2</h4>
+                            <p>...</p>
+                            <h4 id="item-3">Item 3</h4>
+                            <p>...</p>
+                            <h5 id="item-3-1">Item 3-1</h5>
+                            <p>...</p>
+                            <h5 id="item-3-2">Item 3-2</h5>
+                            <p>...</p>
+                        </div>
+
+                        <button class="btn btn-primary fixed-bottom" type="button" data-bs-toggle="offcanvas" data-bs-scroll="true"
+                                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas
+                        </button>
+
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                             aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            {% include 'macros/footer.html' %}
+            <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+            <script src="../static/js/bs-init.js"></script>
+            <script src="../static/js/bold-and-dark.js"></script>
+</body>
+
+</html>
