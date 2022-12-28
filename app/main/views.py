@@ -6,7 +6,8 @@ from . import main
 
 @main.route('/')
 def index():
-    return render_template('index.html')
+    list = ['a', 'b', 'c']
+    return render_template('index.html', list=list)
 
 
 # route pricing
@@ -39,10 +40,10 @@ def team():
     return render_template('team.html')
 
 
-# route testimonials
-@main.route('/testimonials')
-def testimonials():
-    return render_template('testimonials.html')
+# # route testimonials
+# @main.route('/testimonials')
+# def testimonials():
+#     return render_template('testimonials.html')
 
 
 # route contacts
@@ -61,3 +62,9 @@ def login():
 @main.route('/signup')
 def signup():
     return render_template('signup.html')
+
+
+# route tymwork
+@main.route('/tymwork')
+def tymwork():
+    return render_template('tymwork.html')
