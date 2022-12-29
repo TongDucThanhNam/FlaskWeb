@@ -3,7 +3,7 @@
 - Tống Đức Thành Nam. 
 - Trần Thanh Vinh. 
 ### Để Chạy trang web này: Hãy bấm vào đường link sau: 
-http://165.22.97.97:5000/
+tymwork.com
 
 #Để chạy trang Flask web này trên máy cá nhân:
 - Bước 1: Clone project này về máy cá nhân:
@@ -49,3 +49,7 @@ docker-compose build
 ```sh
 docker-compose up -d
 ```
+
+# Web Server docker ubuntu
+- Bước 1: Cài đặt Docker
+git clone git@github.com:TongDucThanhNam/ProjectWeb.git
