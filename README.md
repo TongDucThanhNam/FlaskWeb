@@ -3,7 +3,7 @@
 - Tống Đức Thành Nam. 
 - Trần Thanh Vinh. 
 ### Để Chạy trang web này: Hãy bấm vào đường link sau: 
-tymwork.com
+tymwork.live
 
 #Để chạy trang Flask web này trên máy cá nhân:
 - Bước 1: Clone project này về máy cá nhân:
