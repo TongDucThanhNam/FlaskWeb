@@ -42,4 +42,3 @@ firebase~=3.0.1
 # MySQL-python==1.2.5
 mysqlclient==2.1.1
 sseclient==0.0.27
-Flask-gunicorn==0.1.1
