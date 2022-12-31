@@ -29,7 +29,7 @@ python -m pip install -r requirements.txt
 ```
 - Bước 7. Chạy file web flask: 
 ```sh
-set FLASK_APP=flaskapp.py
+set FLASK_APP=app.py
 ```
 ```sh
 flask run
