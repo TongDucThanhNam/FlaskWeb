@@ -3,6 +3,7 @@ sudo certbot --nginx -d tymwork.live -d www.tymwork.live
 curl -4 tymwork.live
 sudo nano /etc/apache2/sites-available/tymwork.conf
 sudo service apache2 stop
+sudo service apache2 start
 sudo service nginx start
 sudo service nginx stop
 # Tạo CSR
@@ -12,3 +13,19 @@ ls tymwork.live*
 cat example.com.csr
 
 cat tymwork.live.csr
+
+sudo nano /etc/apache2/sites-available/143.198.200.5.conf
+
+<VirtualHost *:443>
+   ServerName 143.198.200.5
+   DocumentRoot /var/www/143.198.200.5
+
+   SSLEngine on
+   SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
+   SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
+</VirtualHost>
+
+sudo mkdir /var/www/143.198.200.5
+sudo nano /var/www/143.198.200.5/index.html
+systemctl reload apache2
+sudo a2ensite 143.198.200.5
