@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+</head>
+<body>
+{% include 'macros/navbar.html' %}
+<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+    <input onclick="document.location.href='{{ url_for('main.tymwork') }}'" type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+    <label class="btn btn-outline-primary" for="btnradio1">Thực hiện</label>
+
+    <input checked type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+    <label class="btn btn-outline-primary" for="btnradio2">Phân công</label>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+                {#Chưa làm#}
+                <div class="card-header">
+                    <a class="mb-0">Danh sách công việc</a>
+                    <div class="">
+                        <div class="d-flex justify-content-around">
+                            <a class="bg-gradient">Công việc 1</a>
+                            <div class="bg-secondary-light badge">
+                                <span>Thành Nam</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Thêm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="card">
+                {#Đang làm#}
+                <div class="card-header">
+                    <a class="mb-0">Danh sách công việc</a>
+                    <div class="">
+                        <div class="d-flex justify-content-around  bg-info-light">
+                            <a class="bg-gradient">Công việc 1</a>
+                            <div class="bg-secondary-light badge">
+                                <span>Thành Nam</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Thêm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="card">
+                {#Đã làm#}
+                <div class="card-header">
+                    <a class="mb-0">Danh sách công việc</a>
+                    <div class="">
+                        <div class="d-flex justify-content-around">
+                            <a class="bg-gradient">Công việc 1</a>
+                            <div class="bg-secondary-light badge">
+                                <span>Thành Nam</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Thêm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="card">
+                {#Đã kiểm tra lại#}
+                <div class="card-header">
+                    <a class="mb-0">Danh sách công việc</a>
+                    <div class="">
+                        <div class="d-flex justify-content-around">
+                            <a class="bg-gradient">Công việc 1</a>
+                            <div class="bg-secondary-light badge">
+                                <span>Thành Nam</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Thêm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+{% include 'macros/footer.html' %}
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+<script src="../static/js/bs-init.js"></script>
+<script src="../static/js/bold-and-dark.js"></script>
+</div>
+</body>
+
+</html>

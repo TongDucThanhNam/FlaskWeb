@@ -122,3 +122,9 @@ def logout():
 @main.route('/tymwork')
 def tymwork():
     return render_template('tymwork.html')
+
+
+# route phancong
+@main.route('/phancong')
+def phancong():
+    return render_template('phancong.html')
