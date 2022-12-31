@@ -29,3 +29,8 @@ sudo mkdir /var/www/143.198.200.5
 sudo nano /var/www/143.198.200.5/index.html
 systemctl reload apache2
 sudo a2ensite 143.198.200.5
+
+<VirtualHost *:80>
+  ServerName tymwork.live
+  ProxyPass / http://143.198.200.5:8080/
+</VirtualHost>
