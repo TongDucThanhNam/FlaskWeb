@@ -20,20 +20,3 @@ services:
 #    depends_on:
 #      - myproject-db
     restart: always
-
-#  quanlybanhang-db:
-#    image:
-#      mysql:8
-#    container_name:
-#      quanlybanhang-db-service
-#    ports:
-#      - "32001:3306"
-#    environment:
-#      MYSQL_ROOT_PASSWORD: 123456
-#      MYSQL_DATABASE: quanlybanhang
-#      MYSQL_USER: soafinal
-#      MYSQL_PASSWORD: 123456
-#    networks:
-#      - quanlysieuthi-network
-#    volumes:
-#      - quanlybanhang-volumn:/var/lib/mysql

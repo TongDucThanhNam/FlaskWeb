@@ -1,0 +1,14 @@
+sudo nano /etc/nginx/sites-available/tymwork.live
+sudo certbot --nginx -d tymwork.live -d www.tymwork.live
+curl -4 tymwork.live
+sudo nano /etc/apache2/sites-available/tymwork.conf
+sudo service apache2 stop
+sudo service nginx start
+sudo service nginx stop
+# Tạo CSR
+openssl req -newkey rsa:2048 -nodes -keyout tymwork.live.key -out tymwork.live.csr
+ls tymwork.live*
+
+cat example.com.csr
+
+cat tymwork.live.csr
