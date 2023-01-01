@@ -34,3 +34,38 @@ sudo a2ensite 143.198.200.5
   ServerName tymwork.live
   ProxyPass / http://143.198.200.5:8080/
 </VirtualHost>
+
+sudo mkdir /var/www/tymwork.live
+sudo chown -R $USER:$USER /var/www/tymwork.live
+sudo chmod -R 755 /var/www/tymwork.live
+sudo nano /var/www/tymwork.live/index.html
+sudo nano /etc/apache2/sites-available/tymwork.live.conf
+
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName tymwork.live
+    ServerAlias www.tymwork.live
+    DocumentRoot /var/www/tymwork.live
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+sudo a2ensite tymwork.live.conf
+
+<VirtualHost *:80> 
+  ProxyPreserveHost On
+  ProxyRequests Off
+    ServerName tymwork.live
+    ServerAlias www.tymwork.live
+  ProxyPass http://localhost:8080/
+  ProxyPassReverse http://localhost:8080
+</VirtualHost> 
+sudo apache2ctl configtest
+<VirtualHost *:80>
+  ProxyPreserveHost On
+  ProxyRequests Off
+  ServerName tymwork.live
+    ServerAlias www.tymwork.live
+  ProxyPass / http://localhost:8080/
+  ProxyPassReverse / http://localhost:8080/
+</VirtualHost>
