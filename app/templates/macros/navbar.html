@@ -20,11 +20,10 @@
             <a class="btn btn-primary shadow" role="button" href="{{ url_for('main.login') }}">Đăng nhập</a>
             <a class="btn btn-outline-secondary ms-2" role="button" href="{{ url_for('main.signup') }}">Đăng ký</a>
             {% else %}
+            {% print("hello " + session['user_email']) %}
             <a class="btn btn-primary shadow" role="button" href="{{ url_for('main.logout') }}">Đăng xuất</a>
             {% endif %}
 
         </div>
     </div>
 </nav>
-{#</body>#}
-{#</html>#}

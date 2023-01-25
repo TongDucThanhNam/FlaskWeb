@@ -2,10 +2,11 @@
 ## Project web này được thực hiện bởi:
 - Tống Đức Thành Nam. 
 - Trần Thanh Vinh. 
+- Nguyễn Võ Công Huy.
 ### Để Chạy trang web này: Hãy bấm vào đường link sau: 
-tymwork.live
+### [https://tymwork.live](https://tymwork.live)
 
-#Để chạy trang Flask web này trên máy cá nhân:
+# Để chạy trang Flask web này trên máy cá nhân:
 - Bước 1: Clone project này về máy cá nhân:
 - Bước 2: Mở terminal cmd và chạy lệnh: 
 ```sh
@@ -35,11 +36,11 @@ set FLASK_APP=flaskapp.py
 flask run
 ```
 
-# Chạy ứng dụng bằng Docker 
+# Chạy ứng dụng bằng Docker Desktop (Docker và Docker Compose):
 - Bước 1: Cài đặt Docker
 - Bước 2: Tạo docker network:
 ```sh
-docker network create --driver myproject-network
+docker network create myproject-network
 ```
 - Bước 3: Tạo build docker:
 ```sh
@@ -50,6 +51,28 @@ docker-compose build
 docker-compose up -d
 ```
 
-# Web Server docker ubuntu
+# Deploy lên server Ubuntu 20.04:
 - Bước 1: Cài đặt Docker
+- Login vào github bằng SSH
+- Clone project này về server.
+```sh
 git clone git@github.com:TongDucThanhNam/ProjectWeb.git
+```
+- Bước 2: Cài Docker và Docker Compose:
+- Tạo docker network:
+```sh
+docker network create --driver myproject-network
+```
+- Build docker:
+```sh
+docker-compose build
+```
+- Chạy docker:
+```sh
+docker-compose up -d
+```
+Nhớ chọn port 5000 để chạy web server
+```sh
+Your_app_IP:5000 (Your_app_IP là địa chỉ IP của server)
+```
+

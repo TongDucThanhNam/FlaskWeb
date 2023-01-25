@@ -3,16 +3,20 @@ from flask import render_template, jsonify, request, redirect, url_for, flash, s
 from . import main
 # import pyrebase
 import firebase
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
 
 config = {
-    'apiKey': "AIzaSyCcMjETBYzYeUiSnxEoM_5LWWPbIEncAoE",
-    'authDomain': "tymwork-9d437.firebaseapp.com",
-    'projectId': "tymwork-9d437",
-    'storageBucket': "tymwork-9d437.appspot.com",
-    'messagingSenderId': "979274671770",
-    'appId': "1:979274671770:web:0857720ba3ab7629466123",
-    'measurementId': "G-SE364ZQ94C",
-    'databaseURL': "https://tymwork-9d437-default-rtdb.asia-southeast1.firebasedatabase.app/"
+    'apiKey': os.getenv("APIKEY"),
+    'authDomain': os.getenv("AUTHDOMAIN"),
+    'databaseURL': os.getenv("DATABASEURL"),
+    'projectId': os.getenv("PROJECTID"),
+    'storageBucket': os.getenv("STORAGEBUCKET"),
+    'messagingSenderId': os.getenv("MESSAGINGSENDERID"),
+    'appId': os.getenv("APPID"),
+    'measurementId': os.getenv("MEASUREMENTID")
 }
 
 firebase = firebase.Firebase(config)

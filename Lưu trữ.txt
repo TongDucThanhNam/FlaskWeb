@@ -14,58 +14,179 @@ cat example.com.csr
 
 cat tymwork.live.csr
 
-sudo nano /etc/apache2/sites-available/143.198.200.5.conf
-
-<VirtualHost *:443>
-   ServerName 143.198.200.5
-   DocumentRoot /var/www/143.198.200.5
-
-   SSLEngine on
-   SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
-   SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
-</VirtualHost>
-
-sudo mkdir /var/www/143.198.200.5
-sudo nano /var/www/143.198.200.5/index.html
-systemctl reload apache2
-sudo a2ensite 143.198.200.5
-
-<VirtualHost *:80>
-  ServerName tymwork.live
-  ProxyPass / http://143.198.200.5:8080/
-</VirtualHost>
-
-sudo mkdir /var/www/tymwork.live
-sudo chown -R $USER:$USER /var/www/tymwork.live
-sudo chmod -R 755 /var/www/tymwork.live
-sudo nano /var/www/tymwork.live/index.html
-sudo nano /etc/apache2/sites-available/tymwork.live.conf
-
-<VirtualHost *:80>
-    ServerAdmin webmaster@localhost
-    ServerName tymwork.live
-    ServerAlias www.tymwork.live
-    DocumentRoot /var/www/tymwork.live
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
 
 sudo a2ensite tymwork.live.conf
 
-<VirtualHost *:80> 
-  ProxyPreserveHost On
-  ProxyRequests Off
-    ServerName tymwork.live
-    ServerAlias www.tymwork.live
-  ProxyPass http://localhost:8080/
-  ProxyPassReverse http://localhost:8080
-</VirtualHost> 
+
 sudo apache2ctl configtest
+
+
 <VirtualHost *:80>
   ProxyPreserveHost On
   ProxyRequests Off
   ServerName tymwork.live
     ServerAlias www.tymwork.live
-  ProxyPass / http://localhost:8080/
-  ProxyPassReverse / http://localhost:8080/
+  ProxyPass / http://143.198.200.5:5000/
+  ProxyPassReverse / http://143.198.200.5:5000/
 </VirtualHost>
+
+sudo nano /etc/apache2/sites-available/tymwork.live.conf
+sudo nano /etc/apache2/sites-available/143.198.200.5.conf
+sudo a2dissite 143.198.200.5.conf 
+sudo a2dissite tymwork.live.conf 
+systemctl reload apache2
+systemctl restart apache2
+systemctl status apache2.service
+sudo nano 000-default.conf
+
+#cài đặt nginx
+sudo apt-get update
+sudo apt-get install nginx
+
+Kiểm tra nginx đã cài đặt chưa:
+systemctl status nginx
+#tắt
+dừng nginx
+systemctl stop nginx
+khởi động lại nginx
+systemctl start nginx
+khởi động lại nginx
+systemctl restart nginx
+tắt nginx
+systemctl disable nginx
+mở lại nginx
+systemctl enable nginx
+
+Kết nối web server với github
+https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps
+
+kết nối với github
+ssh-keygen -t rsa -b 4096 -C "tongducthanhnam.com"
+cat ~/.ssh/id_rsa.pub
+ssh -T git@github.com
+
+
+
+câu lệnh git clone cho server
+git clone git@github.com:TongDucThanhNam/ProjectWeb.git
+# Tạo docker network
+docker network create myproject-network
+# build docker 
+docker build -t tymwork .
+# run docker
+docker run -d -p 5000:5000 --name tymwork --network myproject-network tymwork
+
+# chỉnh nginx proxy trỏ đến tymwork.live
+sudo nano /etc/nginx/conf.d/default.conf
+server {
+    listen 80;
+    server_name tymwork.live;
+    location / {
+        proxy_pass http://tymwork;
+    }
+}
+sudo nano /etc/nginx/nginx.conf
+# chỉnh nginx proxy trỏ đến tymwork.live file nginx.conf
+upstream tymwork {
+    server
+    
+
+sudo nano /etc/nginx/sites-available/default
+
+
+
+sudo nano /etc/nginx/sites-enabled/default
+
+
+upstream docker {
+    server 167.172.70.227:5000;
+  
+}
+
+server {
+    listen 80;
+
+    location / {
+        proxy_pass http://docker;
+    }
+}
+
+
+events {
+
+}
+
+http {
+    listen 80;
+    
+    server_name tymwork.live;
+    
+    location / {
+        proxy_pass http://localhost:5000;
+    }
+}
+
+sudo nginx -t
+
+        server {
+        listen 80;
+
+        server_name nginx-tutorial.test;
+
+        location / {
+           proxy_pass "http://localhost:5000";
+        }
+
+events {
+
+}
+
+
+http {
+        include /etc/nginx/mime.types;
+
+        server {
+        listen 80;
+
+        server_name www.tymwork.live;
+
+        location / {
+           proxy_pass http://localhost:5000;
+        }
+    }
+}
+
+server {
+    listen 80;
+    server_name tymwork.live;
+
+    location / {
+      proxy_pass http://localhost:5000;
+      proxy_set_header X-Real-Ip $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header Host $host;
+      proxy_set_header REMOTE_ADDR $remote_addr;
+      proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+167.172.70.227
+
+nginx -t # Kiểm tra tính hợp lệ của file.
+
+nginx -s reload # Khởi động lại NGINX.
+
+cd /etc/nginx/conf.d
+#nginx resstar
+sudo systemctl restart nginx
+nginx status
+sudo systemctl status nginx
+
+sudo certbot --nginx -d tymwoek.live -d www.tymwork.live
+sudo certbot --nginx -d tymwork.live -d www.tymwork.live
+
+taoj file tymwork.live.conf
+rm /etc/nginx/site-available/tymwork.live.conf
+sudo nano /etc/nginx/sites-available/tymwork.live.conf
+
+certbot install --cert-name tymwork.live
