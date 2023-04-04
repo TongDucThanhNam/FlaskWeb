@@ -76,5 +76,12 @@ Nhớ chọn port 5000 để chạy web server
 Your_app_IP:5000 (Your_app_IP là địa chỉ IP của server)
 ```
 
+# Authen with firebase:
+- Bước 1: Tạo tài khoản firebase
+- Bước 2: Tạo project
+- Bước 3: Tạo web app
+- Bước 4: Copy API key và đặt vào file .env
+- Bước 5: Sử dụng thư viện pyrebase4 để kết nối với firebase
+link: https://github.com/nhorvath/Pyrebase4
 
 
