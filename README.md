@@ -76,3 +76,5 @@ Nhớ chọn port 5000 để chạy web server
 Your_app_IP:5000 (Your_app_IP là địa chỉ IP của server)
 ```
 
+
+
